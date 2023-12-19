@@ -1,0 +1,236 @@
+
+:root {
+    --color-bg-main: white;
+    --color-font-header: #4520AB;
+    --color-border-default: #F0F0F0;
+    --color-font-default: black;
+    --color-btn-bg: black;
+    --color-bg-rus: #ebebeb;
+    --color-bg-en:#d1d1d1;
+    --color-bg-tooltip: white;
+    --color-border-row: black;
+    --color-btn-delete: #ADADAD;
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono';
+    
+}
+
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 44px;
+    width: 500px;
+    background-color: var(--color-bg-main);
+}
+
+#header {
+    text-align: center;
+    color: var(--color-font-header);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#header .santa {
+    display: none;
+}
+
+#header:hover .santa {
+    display: block;
+    position: absolute;
+    margin-left: 370px;
+    margin-top: -100px;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}
+
+    @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+
+}
+
+#header,
+.form,
+#container,
+.row {
+  width: 100%;
+  
+}
+
+.input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 14px;
+  font-weight: 400;
+  padding-right: 120px;
+  
+}
+
+.input::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.input:focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.7s ease;}
+
+input::placeholder {
+    font-size: 18px;
+    color: var(--color-btn-delete);
+    text-overflow: ellipsis;
+}
+
+.form {
+    display: flex;
+    width: 100%;
+    height: 56px;
+    font-weight: 400;
+    margin-top: 86px;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    margin-left: 390px;
+    margin-top: 7px;
+    background-color: var(--color-btn-bg);
+    color:white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 400;
+    
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 60px;
+    margin-bottom: 62px;
+    
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+.rus, .en {
+    padding: 10px;
+    width: 50%;
+    height: 40px;
+    align-items: center;
+    border: 0px;
+}
+
+#container div:first-child .rus {
+    border-top-left-radius: 8px;
+}
+
+#container div:first-child .en {
+    border-top-right-radius: 8px;
+}
+
+.row + .row {
+    border-top: 1px solid black;
+}
+
+#container div:last-child .rus {
+    border-bottom-left-radius: 8px;
+}
+
+#container div:last-child .en {
+    border-bottom-right-radius: 8px;
+}
+
+
+.rus {
+    position: relative;
+    padding-left: 40px;
+    background-color: var(--color-bg-rus);
+    border-right: 1px solid black;
+
+  }
+
+.index {
+    position: absolute;
+    margin-left: -30px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.en {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    background-color: var(--color-bg-en);
+    border-left: 1px solid black;
+}
+
+
+.clearAll {
+    width: 176px;
+    padding: 6px 10px 8px 10px;
+    border-radius: 8px;
+    border: 0px;
+    font-size: 18px;
+    padding-left: 30px;
+    font-weight: 400;
+    background-color: var(--color-btn-delete);
+    position: relative;
+}
+
+.iconClearAll {
+    position: absolute;
+    margin-left: -25px;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: var(--color-bg-tooltip);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 5px var(--color-btn-delete);
+    width: 133px;
+    z-index: 10;
+    word-wrap: break-word;
+}
+
+
+@media (min-width: 350px) and (max-width: 600px) {
+
+    #header {
+        font-size: 36px;
+        letter-spacing: -2.52px;
+    }
+
+    #header:hover .santa {
+        margin-left: 250px;
+    }
+    
+    .main {
+        width: 328px;
+    }
+    
+    .button {
+        margin-left: 220px;
+    }
+    
+    input::placeholder {
+        font-size: 15px;
+    }
+    
+    }
