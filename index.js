@@ -97,7 +97,7 @@ input.addEventListener('keydown', (event) => {
 })
 
 clearAllButton.addEventListener('click',() => {
-    window.location = '/'
+    window.location = '/translit'
 })
 
 function rus_to_latin ( str ) {
